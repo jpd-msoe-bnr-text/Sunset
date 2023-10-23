@@ -3,6 +3,7 @@ package edu.msoe.demastri.sunset
 import android.animation.ObjectAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.AccelerateInterpolator
 import edu.msoe.demastri.sunset.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         val heightAnimator = ObjectAnimator
             .ofFloat(binding.sun, "y", sunYStart, sunYEnd)
             .setDuration(3000)
+        heightAnimator.interpolator = AccelerateInterpolator()
 
         heightAnimator.start()
     }
